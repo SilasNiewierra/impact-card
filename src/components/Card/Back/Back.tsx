@@ -37,7 +37,7 @@ const BackCard: React.FC<CardProps> = (props) => {
   return (
     <Card>
       <div>
-        {/* Background Image Section */}
+        {/* Header Section */}
         <div className="relative cursor-pointer" onClick={flip}>
           <img
             src={props.backgroundImageSrc}
@@ -45,16 +45,15 @@ const BackCard: React.FC<CardProps> = (props) => {
             className="w-full h-52 object-cover bg-gradient-to-t from-red-500 to-black "
             style={{ minHeight: "100px", maxHeight: "100px" }}
           />
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-100"></div>
 
-          {/* Gradient Overlay with Transition */}
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-100 transition-opacity duration-500 ease-in-out"></div>
-
-          {/* Circular Overlays */}
+          {/* Company Logo */}
           <div className="absolute top-4 left-4 w-20 h-20 bg-gray-900 rounded-full flex items-center justify-center">
             <img
               src={props.sponsor.logoSrc}
               alt="Company Logo"
-              className="w-12 h-12"
+              className="w-16 h-16"
             />
           </div>
         </div>

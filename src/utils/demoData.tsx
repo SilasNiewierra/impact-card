@@ -1,8 +1,7 @@
 export const cards = [
   {
     title: "Whale Shark Rescue",
-    backgroundImageSrc: require("../assets/moana-background.jpg"),
-
+    backgroundImageSrc: require("../assets/moana-bg.jpg"),
     rewards: [
       {
         iconSrc: require("../assets/icon-ticket.png"),

@@ -5,7 +5,7 @@ import Card from "../Card";
 const FrontCard: React.FC<CardProps> = (props) => {
   return (
     <Card>
-      {/* Image Section */}
+      {/* Header Section */}
       <div className="relative">
         {/* Background Image */}
         <img
@@ -63,7 +63,7 @@ const FrontCard: React.FC<CardProps> = (props) => {
                 />
                 <stop
                   offset="100%"
-                  style={{ stopColor: "rgb(0,0,0)", stopOpacity: 0 }}
+                  style={{ stopColor: "rgb(0,0,0)", stopOpacity: 0.5 }}
                 />
               </linearGradient>
             </defs>
@@ -95,7 +95,7 @@ const FrontCard: React.FC<CardProps> = (props) => {
         {/* Impact Data Section */}
         <div className="flex justify-around py-2 border-t border-b border-gray-400 text-center">
           {/* Achievement Statistic */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center flex-1">
             <div className="flex gap-2">
               <img
                 src={props.impact.iconSrc}
@@ -108,7 +108,7 @@ const FrontCard: React.FC<CardProps> = (props) => {
           </div>
 
           {/* Personal Impact */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center flex-1">
             <div className="flex gap-2">
               <img
                 src={props.totalImpact.iconSrc}
@@ -123,13 +123,15 @@ const FrontCard: React.FC<CardProps> = (props) => {
           </div>
 
           {/* Audience Owner */}
-          <div className="flex flex-col items-center">
-            <div className="flex rounded-full bg-gray-400">
-              <img
-                src={props.audienceOwner.logoSrc}
-                alt="Company Logo"
-                className="w-6 h-6"
-              />
+          <div className="flex flex-col items-center flex-1">
+            <div className="flex gap-2">
+              <div className="flex rounded-full bg-gray-400">
+                <img
+                  src={props.audienceOwner.logoSrc}
+                  alt="Company Logo"
+                  className="w-6 h-6"
+                />
+              </div>
             </div>
             <span className="text-xs mt-1">{props.audienceOwner.name}</span>
           </div>
