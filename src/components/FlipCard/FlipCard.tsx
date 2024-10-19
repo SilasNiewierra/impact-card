@@ -18,7 +18,7 @@ const Flip: React.FC<Props> = (props) => {
   });
 
   return (
-    <div className={`flip-card ${isFlipped ? "flipped" : ""}`}>
+    <div className={`flip-card p-2 ${isFlipped ? "flipped" : ""}`}>
       <div className="flip-card-inner">
         <div className="flip-card-front" onClick={handleFlip}>
           {props.FrontComponent}

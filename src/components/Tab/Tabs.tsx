@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface TabItem {
   label: string;
@@ -7,10 +7,15 @@ interface TabItem {
 
 interface Props {
   tabs: TabItem[];
+  updateTab: (tab: TabItem) => void;
 }
 
-const Tabs: React.FC<Props> = ({ tabs }) => {
+const Tabs: React.FC<Props> = ({ tabs, updateTab }) => {
   const [activeTab, setActiveTab] = useState<number>(0);
+
+  useEffect(() => {
+    updateTab(tabs[activeTab]);
+  }, [activeTab]);
 
   return (
     <div className="w-full max-w-lg mx-auto">
@@ -18,7 +23,7 @@ const Tabs: React.FC<Props> = ({ tabs }) => {
         {tabs.map((tab, idx) => (
           <button
             key={idx}
-            className={`py-2 px-4 font-semibold focus:outline-none ${
+            className={`py-2 px-4 font-semibold text-sm focus:outline-none ${
               activeTab === idx
                 ? "border-b-2 border-white text-white"
                 : "text-gray-600"
@@ -29,7 +34,12 @@ const Tabs: React.FC<Props> = ({ tabs }) => {
           </button>
         ))}
       </div>
-      <div className="pt-2">{tabs[activeTab]?.content}</div>
+      <div
+        className="py-2 overflow-y-scroll"
+        style={{ minHeight: "370px", maxHeight: "370px" }}
+      >
+        {tabs[activeTab]?.content}
+      </div>
     </div>
   );
 };
