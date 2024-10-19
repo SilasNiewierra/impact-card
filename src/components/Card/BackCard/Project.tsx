@@ -1,5 +1,5 @@
 import React from "react";
-import { AudienceOwner } from "../../types";
+import { AudienceOwner } from "../../../utils/types";
 
 interface ProjectProps {
   audienceOwner: AudienceOwner;

@@ -1,17 +1,11 @@
 import React from "react";
-// import CompanyLogo from "../../assets/walt-disney.png";
-// import BackgroundImage from "../../assets/moana-background.jpg";
-// import LeafIcon from "../../assets/icon-tree.png";
-// import GlobeIcon from "../../assets/icon-globe.png";
-// import Reward1 from "../../assets/icon-ticket.png";
-// import Reward2 from "../../assets/reward2.svg";
-import ShareIcon from "../../assets/icon-share.png";
-import Tabs from "../Tabs";
+import ShareIcon from "../../../assets/icon-share.png";
+import Tabs from "../../Tab/Tabs";
+import { Card, Reward } from "../../../utils/types";
 import Rewards from "./Rewards";
+import Proofs from "./Proofs";
 import Project from "./Project";
-import { Card, Reward } from "../../types";
 import Sponsor from "./Sponsor";
-import Proof from "./Proof";
 
 const BackCard: React.FC<Card> = (props) => {
   const flip = () => {
@@ -24,7 +18,7 @@ const BackCard: React.FC<Card> = (props) => {
       label: "Project",
       content: <Project audienceOwner={props.audienceOwner} />,
     },
-    { label: "Proof", content: <Proof proofs={props.proofs} /> },
+    { label: "Proof", content: <Proofs proofs={props.proofs} /> },
     { label: "Sponsor", content: <Sponsor sponsor={props.sponsor} /> },
   ];
 

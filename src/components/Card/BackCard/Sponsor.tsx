@@ -1,5 +1,5 @@
 import React from "react";
-import { Sponsor } from "../../types";
+import { Sponsor } from "../../../utils/types";
 
 interface SponsorProps {
   sponsor: Sponsor;

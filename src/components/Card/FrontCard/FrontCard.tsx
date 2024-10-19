@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Reward } from "../../types";
+import { Card, Reward } from "../../../utils/types";
 
 const FrontCard: React.FC<Card> = (props) => {
   return (

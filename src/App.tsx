@@ -1,9 +1,9 @@
 import React from "react";
 
 import "./App.css";
-import FrontCard from "./components/Card/FrontCard";
-import BackCard from "./components/Card/BackCard";
-import Flip from "./components/Flip";
+import FrontCard from "./components/Card/FrontCard/FrontCard";
+import BackCard from "./components/Card/BackCard/BackCard";
+import Flip from "./components/FlipCard/FlipCard";
 
 const cards = [
   {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Flip.css";
+import "./FlipCard.css";
 
 interface Props {
   FrontComponent: React.ReactElement;
