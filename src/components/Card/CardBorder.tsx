@@ -13,7 +13,7 @@ const CardBorder: React.FC<Props> = ({ totalCollectionCount, color }) => {
     <>
       {rarity.value === "epic" && (
         <div
-          className={`blur absolute w-full h-full inset-0 rounded-3xl bg-gradient-to-br animate-pulse ${rarity.cssClassName}`}
+          className={`blur absolute w-full h-full inset-0 rounded-3xl bg-gradient-to-br animate-pulse z-10 ${rarity.cssClassName}`}
         ></div>
       )}
       <div
