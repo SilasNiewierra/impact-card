@@ -1,6 +1,4 @@
 .flip-card {
-    width: 350px;
-    height: 590px;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.5s;

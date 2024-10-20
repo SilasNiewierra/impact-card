@@ -13,16 +13,11 @@ const Flip: React.FC<CardProps> = (props) => {
   };
 
   return (
-    <div className={`flip-card ${isFlipped ? "flipped" : ""}`}>
+    <div style={{ height: "590px", width: "350px" }}>
       <div className="flip-card-inner cursor-pointer">
         <div className="flip-card-front" onClick={handleFlip}>
           <Card cardProps={props}>
             <FrontCard cardProps={props} />
-          </Card>
-        </div>
-        <div className="flip-card-back" onClick={handleFlip}>
-          <Card cardProps={props}>
-            <BackCard cardProps={props} />
           </Card>
         </div>
       </div>
