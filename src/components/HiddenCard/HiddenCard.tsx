@@ -8,25 +8,21 @@ interface Props {
 }
 
 const HiddenCard: React.FC<Props> = ({ cardProps }) => {
-  const [revealState, setRevealState] = useState("hidden");
-  const handleReveal = () => {
-    setRevealState("reveal");
-    setTimeout(() => {
-      setRevealState("visible");
-    }, 1500);
+  const [isShaking, setIsShaking] = useState(false);
+
+  const triggerShake = () => {
+    setIsShaking(true);
   };
 
   return (
     <div
       style={{ height: "590px", width: "350px" }}
-      className={` ${revealState === "reveal" ? "strong-tilt-move-shake" : ""}`}
+      className={` ${isShaking ? "strong-tilt-move-shake" : ""}`}
     >
       <div className="h-full w-full cursor-pointer">
         <div
-          className={`h-full w-full  ${
-            revealState === "reveal" ? "" : "clean-shimmer"
-          }`}
-          onClick={handleReveal}
+          className={`h-full w-full  ${isShaking ? "" : "clean-shimmer"}`}
+          onClick={triggerShake}
         >
           <Card cardProps={cardProps} hidden={true}>
             {/* Header Section */}

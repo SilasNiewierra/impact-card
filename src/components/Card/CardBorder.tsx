@@ -8,7 +8,7 @@ interface Props {
 }
 
 const CardBorder: React.FC<Props> = ({ totalCollectionCount, color }) => {
-  const rarity = getRarity(totalCollectionCount);
+  const rarity = getRarity(totalCollectionCount, color);
   return (
     <>
       {rarity.value === "epic" && (

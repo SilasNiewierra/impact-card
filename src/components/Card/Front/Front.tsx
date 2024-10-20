@@ -13,7 +13,7 @@ interface Props {
 }
 
 const FrontCard: React.FC<Props> = ({ cardProps }) => {
-  const rarity = getRarity(cardProps.totalCollectionCount);
+  const rarity = getRarity(cardProps.totalCollectionCount, cardProps.color);
 
   return (
     <>

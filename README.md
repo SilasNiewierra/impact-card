@@ -1,6 +1,9 @@
 # Everclime - Impact Card
 
-![alt text](./src/assets/readme/mockup-macbook-reveal.png)
+
+[![Watch the video](./src/assets/readme/mockup-macbook-reveal.png)](./src/assets/readme/mockup-macbook-reveal.mp4)
+
+<!-- ![alt text](./src/assets/readme/mockup-macbook-reveal.png) -->
 
 **Description:**
 
@@ -9,6 +12,7 @@ This project demonstrates a concept for a gamified impact card, inspired by Ever
 **Key Features:**
 
 - **Rarity Badges:** Engage users with a collectible element by assigning rarity badges (common, rare, mint, epic) to impact cards.
+- **Card Reveal:** Increase gamification and user satisfaction with a touch of magic and mystery when revealing their impact cards.
 - **Collections:** Group multiple impact cards under a single theme or brand
 - **Interactive Animations:** Enhance user experience with animations like metallic shimmers and flip effects.
 - **Mobile-First Design:** Prioritize a seamless experience on mobile devices.

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import confetti from "canvas-confetti";
 import getRarity from "../../utils/rarityHelper";
-import { shadeColor } from "../../utils/colorHelper";
 
 interface Props {
   totalCollectionCount: number;
@@ -21,7 +20,7 @@ const Confetti: React.FC<Props> = ({
   const [origin, setOrigin] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const rarity = getRarity(totalCollectionCount);
+    const rarity = getRarity(totalCollectionCount, color);
 
     var parent = document.getElementById(`parent-${id}`) as HTMLElement;
     const parentContainer = parent.getBoundingClientRect();
@@ -50,10 +49,7 @@ const Confetti: React.FC<Props> = ({
         zIndex: 100,
         startVelocity: 30,
         scalar: 0.5,
-        colors:
-          rarity.value === "common"
-            ? [color, shadeColor(color, 100), shadeColor(color, 50)]
-            : rarity.colors,
+        colors: rarity.colors,
       });
     }
   }, [color, id, totalCollectionCount]);
@@ -67,6 +63,7 @@ const Confetti: React.FC<Props> = ({
       style={{
         left: `${origin.x}px`,
         top: `${origin.y}px`,
+        pointerEvents: "none",
       }}
     ></canvas>
   );

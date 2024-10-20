@@ -1,6 +1,7 @@
+import { shadeColor } from "./colorHelper";
 import { Rarity } from "./types";
 
-const getRarity = (totalCollectionCount: number): Rarity => {
+const getRarity = (totalCollectionCount: number, color: string): Rarity => {
   let rarity: "common" | "rare" | "mint" | "epic" = "common";
 
   if (totalCollectionCount <= 500) rarity = "epic";
@@ -12,7 +13,7 @@ const getRarity = (totalCollectionCount: number): Rarity => {
       value: "common",
       label: "",
       cssClassName: "",
-      colors: [],
+      colors: ["#ffffff", color, shadeColor(color, 50), shadeColor(color, 100)],
     },
     rare: {
       value: "rare",

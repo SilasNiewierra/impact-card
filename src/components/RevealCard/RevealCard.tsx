@@ -6,11 +6,12 @@ import Confetti from "./Confetti";
 
 const RevealCard: React.FC<CardProps> = (cardProps) => {
   const [revealState, setRevealState] = useState("hidden");
+
   const reveal = () => {
     setRevealState("reveal");
     setTimeout(() => {
       setRevealState("visible");
-    }, 1500);
+    }, 600);
   };
 
   return (
