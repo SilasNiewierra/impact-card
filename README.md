@@ -1,6 +1,6 @@
 # Everclime - Impact Card
 
-![alt text](./src/assets/readme/mockup-macbook-reveal.png)
+![alt text](./src/assets/readme/mockup-macbook-front.png)
 
 **Description:**
 
