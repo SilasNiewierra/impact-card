@@ -1,6 +1,5 @@
 import React from "react";
-import { Sponsor } from "../../../utils/types";
-
+import { Sponsor } from "../../../../utils/types";
 interface Props {
   sponsor: Sponsor;
 }

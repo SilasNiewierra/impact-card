@@ -41,3 +41,25 @@ body,
         mask-position: left
     }
 }
+
+.clean-shimmer {
+    color: rgb(189, 189, 189);
+    display: inline-block;
+    mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/350% 100%;
+    animation: clean-shimmer 8.5s infinite;
+}
+
+@keyframes clean-shimmer {
+    0% {
+        mask-position: right;
+    }
+    25% {
+        mask-position: left;
+    }
+    75% {
+        mask-position: left;
+    }
+    100% {
+        mask-position: right;
+    }
+}

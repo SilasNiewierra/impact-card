@@ -16,7 +16,7 @@ const CardContainer: React.FC<CardProps> = (cardProps) => {
     <div>
       {["hidden", "reveal"].includes(revealState) ? (
         <div onClick={reveal}>
-          <HiddenCard {...cardProps} />
+          <HiddenCard cardProps={cardProps} />
         </div>
       ) : (
         <div

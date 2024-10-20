@@ -1,5 +1,5 @@
 import React from "react";
-import { Proof } from "../../../utils/types";
+import { Proof } from "../../../../utils/types";
 
 interface Props {
   proofs: Proof[];

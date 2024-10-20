@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import Card from "../Card/Card";
 import { CardProps } from "../../utils/types";
 import "./HiddenCard.css";
+import Header from "../Card/Front/Header";
+interface Props {
+  cardProps: CardProps;
+}
 
-const HiddenCard: React.FC<CardProps> = (props) => {
+const HiddenCard: React.FC<Props> = ({ cardProps }) => {
   const [revealState, setRevealState] = useState("hidden");
   const handleReveal = () => {
     setRevealState("reveal");
@@ -18,15 +22,30 @@ const HiddenCard: React.FC<CardProps> = (props) => {
       className={` ${revealState === "reveal" ? "strong-tilt-move-shake" : ""}`}
     >
       <div className="h-full w-full cursor-pointer">
-        <div className="h-full w-full" onClick={handleReveal}>
-          <Card cardProps={props} hidden={true}>
+        <div
+          className={`h-full w-full  ${
+            revealState === "reveal" ? "" : "clean-shimmer"
+          }`}
+          onClick={handleReveal}
+        >
+          <Card cardProps={cardProps} hidden={true}>
+            {/* Header Section */}
+            <div className="blur">
+              <Header
+                backgroundImageSrc={cardProps.backgroundImageSrc}
+                color={cardProps.color}
+                sponsor={cardProps.sponsor}
+              />
+            </div>
             <div className="flex justify-center items-center h-full w-full p-4 text-center">
               <div>
                 <p className="text-lg font-bold">Congratulations</p>
-                <p className="">You just made the world a better place</p>
                 <p>
-                  Wanna see your unique impact card, rewards and more? Click
-                  this card to reveal the details
+                  You just made the world a better place. Wanna see your unique
+                  impact card, rewards and more?
+                </p>
+                <p className="text-lg font-bold mt-4">
+                  Click this card to reveal it all!
                 </p>
               </div>
               <div id="stripped">

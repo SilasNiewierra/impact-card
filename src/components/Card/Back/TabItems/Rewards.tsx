@@ -1,5 +1,5 @@
 import React from "react";
-import { Reward } from "../../../utils/types";
+import { Reward } from "../../../../utils/types";
 
 interface Props {
   rewards: Reward[];
