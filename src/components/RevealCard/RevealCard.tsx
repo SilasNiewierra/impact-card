@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { CardProps } from "../../utils/types";
 import HiddenCard from "../HiddenCard/HiddenCard";
 import FlipCard from "../FlipCard/FlipCard";
+import Confetti from "./Confetti";
 
-const CardContainer: React.FC<CardProps> = (cardProps) => {
+const RevealCard: React.FC<CardProps> = (cardProps) => {
   const [revealState, setRevealState] = useState("hidden");
   const reveal = () => {
     setRevealState("reveal");
@@ -13,7 +14,7 @@ const CardContainer: React.FC<CardProps> = (cardProps) => {
   };
 
   return (
-    <div>
+    <div id={`parent-${cardProps.id}`}>
       {["hidden", "reveal"].includes(revealState) ? (
         <div onClick={reveal}>
           <HiddenCard cardProps={cardProps} />
@@ -25,10 +26,17 @@ const CardContainer: React.FC<CardProps> = (cardProps) => {
           }`}
         >
           <FlipCard cardProps={cardProps} />
+          <Confetti
+            totalCollectionCount={cardProps.totalCollectionCount}
+            color={cardProps.color}
+            width={800}
+            height={800}
+            id={cardProps.id}
+          />
         </div>
       )}
     </div>
   );
 };
 
-export default CardContainer;
+export default RevealCard;

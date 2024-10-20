@@ -1,8 +1,7 @@
 import { Rarity } from "./types";
 
 const getRarity = (totalCollectionCount: number): Rarity => {
-
-  let rarity: 'common' | 'rare' | 'mint' | 'epic' = "common";
+  let rarity: "common" | "rare" | "mint" | "epic" = "common";
 
   if (totalCollectionCount <= 500) rarity = "epic";
   else if (totalCollectionCount <= 1000) rarity = "mint";
@@ -13,21 +12,26 @@ const getRarity = (totalCollectionCount: number): Rarity => {
       value: "common",
       label: "",
       cssClassName: "",
+      colors: [],
     },
     rare: {
       value: "rare",
       label: "Rare",
       cssClassName: "bg-gradient-to-r from-gray-300 via-gray-500 to-gray-700",
+      colors: ["#D1D5DB", "#6B7280", "#374151"],
     },
     mint: {
       value: "mint",
       label: "Mint",
-      cssClassName: "bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500",
+      cssClassName:
+        "bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500",
+      colors: ["#34D399", "#14B8A6", "#22D3EE"],
     },
     epic: {
       value: "epic",
       label: "Epic",
       cssClassName: "from-pink-500 via-cyan-500 to-violet-500",
+      colors: ["#6366F1", "#A855F7", "#EC4899"],
     },
   };
 
