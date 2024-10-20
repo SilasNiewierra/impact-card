@@ -7,7 +7,7 @@ export const cards = [
     rewards: [
       {
         id: "free-sea-show",
-        iconSrc: require("../assets/icon-ticket.png"),
+        iconSrc: require("../assets/icons/icon-ticket.png"),
         title: "Free entry to Sea Show",
         description:
           "This reward allows you and a friend free entry to the Aquarium as well as the special Show.",
@@ -15,7 +15,7 @@ export const cards = [
       },
       {
         id: "discount-disney-concert-10",
-        iconSrc: require("../assets/icon-mic.png"),
+        iconSrc: require("../assets/icons/icon-mic.png"),
         title: "10% off Disney in Concert",
         description:
           "Enjoy a special night with your favorite tropical Disney movie 'Moana' and a huge live orchestra accompanying it. Get 10% with this impact card.",
@@ -23,12 +23,12 @@ export const cards = [
       },
     ],
     impact: {
-      iconSrc: require("../assets/icon-tree.png"),
+      iconSrc: require("../assets/icons/icon-tree.png"),
       metric: "5",
       text: "Habitats protected",
     },
     totalImpact: {
-      iconSrc: require("../assets/icon-globe.png"),
+      iconSrc: require("../assets/icons/icon-globe.png"),
       metric: "1%",
       text: "Contributed To Total",
     },
@@ -73,7 +73,7 @@ export const cards = [
     rewards: [
       {
         id: "free-turtle-adoption",
-        iconSrc: require("../assets/icon-turtle.png"),
+        iconSrc: require("../assets/icons/icon-turtle.png"),
         title: "Free Turtle Adoption",
         description:
           "Adopt a sea turtle and receive updates on its journey and conservation efforts.",
@@ -81,7 +81,7 @@ export const cards = [
       },
       {
         id: "discount-disney-merch-25",
-        iconSrc: require("../assets/icon-shirt.png"),
+        iconSrc: require("../assets/icons/icon-shirt.png"),
         title: "25% off Disney Merchandise",
         description:
           "Enjoy 25% off on all Disney merchandise when you support our turtle conservation efforts.",
@@ -89,12 +89,12 @@ export const cards = [
       },
     ],
     impact: {
-      iconSrc: require("../assets/icon-turtle.png"),
+      iconSrc: require("../assets/icons/icon-turtle.png"),
       metric: "200",
       text: "Turtle nests protected",
     },
     totalImpact: {
-      iconSrc: require("../assets/icon-globe.png"),
+      iconSrc: require("../assets/icons/icon-globe.png"),
       metric: "4%",
       text: "Contributed To Total",
     },
@@ -140,7 +140,7 @@ export const cards = [
     rewards: [
       {
         id: "free-beach-cleanup-kit",
-        iconSrc: require("../assets/icon-cleanup-kit.png"),
+        iconSrc: require("../assets/icons/icon-cleanup-kit.png"),
         title: "Free Beach Cleanup Kit",
         description:
           "Receive a beach cleanup kit to help reduce plastic waste along our shorelines.",
@@ -148,7 +148,7 @@ export const cards = [
       },
       {
         id: "discount-disney-theme-park-20",
-        iconSrc: require("../assets/icon-ticket.png"),
+        iconSrc: require("../assets/icons/icon-ticket.png"),
         title: "20% off Disney Theme Park Tickets",
         description:
           "Get 20% off your next visit to a Disney Theme Park when you contribute to this initiative.",
@@ -156,12 +156,12 @@ export const cards = [
       },
     ],
     impact: {
-      iconSrc: require("../assets/icon-stars.png"),
+      iconSrc: require("../assets/icons/icon-stars.png"),
       metric: "2,500",
       text: "Pounds of plastic collected",
     },
     totalImpact: {
-      iconSrc: require("../assets/icon-globe.png"),
+      iconSrc: require("../assets/icons/icon-globe.png"),
       metric: "3%",
       text: "Contributed To Total",
     },
@@ -207,7 +207,7 @@ export const cards = [
     rewards: [
       {
         id: "free-snorkeling-experience",
-        iconSrc: require("../assets/icon-snorkel.png"),
+        iconSrc: require("../assets/icons/icon-snorkel.png"),
         title: "Free Snorkeling Experience",
         description:
           "This reward grants you and a friend a free snorkeling session in the beautiful coral reefs.",
@@ -215,7 +215,7 @@ export const cards = [
       },
       {
         id: "discount-disney-movie-15",
-        iconSrc: require("../assets/icon-movie.png"),
+        iconSrc: require("../assets/icons/icon-movie.png"),
         title: "15% off Disney Nature Film",
         description:
           "Get a 15% discount on any Disney Nature film showcasing the beauty of marine life.",
@@ -223,12 +223,12 @@ export const cards = [
       },
     ],
     impact: {
-      iconSrc: require("../assets/icon-coral.png"),
+      iconSrc: require("../assets/icons/icon-coral.png"),
       metric: "50",
       text: "Coral fragments planted",
     },
     totalImpact: {
-      iconSrc: require("../assets/icon-globe.png"),
+      iconSrc: require("../assets/icons/icon-globe.png"),
       metric: "2%",
       text: "Contributed To Total",
     },
