@@ -51,7 +51,7 @@ Live demo: https://impact-card.vercel.app/
 **Example Impact Cards**
 
 * **"Gentle Giants of the Deep":** This card could highlight the importance of sustainable seafood choices to protect whale sharks, the biggest fish in the ocean.
-* **"Ancient Navigators":** This card could focus on reducing plastic pollution and prevent oversfishing to keep sea turtles, ancient navigators of the sea, safe.
+* **"Ancient Navigators":** This card could focus on reducing plastic pollution and prevent overfishing to keep sea turtles, ancient navigators of the sea, safe.
 * **"Te Fiti's Tears":** This card could emphasize the impact of plastic pollution and the prevention of plastic consumption.
 * **"Oceans Heart":** This card could inspire users to support organizations dedicated to reef conservation efforts, helping to bring back the magic of the reef.
 
