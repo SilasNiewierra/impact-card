@@ -1,9 +1,12 @@
 export const cards = [
   {
+    id: "whale-shark-rescue",
     title: "Whale Shark Rescue",
     backgroundImageSrc: require("../assets/moana-bg.jpg"),
+    color: "#111827",
     rewards: [
       {
+        id: "free-sea-show",
         iconSrc: require("../assets/icon-ticket.png"),
         title: "Free entry to Sea Show",
         description:
@@ -11,6 +14,7 @@ export const cards = [
         detailsUrl: "https://www.google.com.au",
       },
       {
+        id: "discount-disney-concert-10",
         iconSrc: require("../assets/icon-mic.png"),
         title: "10% off Disney in Concert",
         description:
@@ -44,19 +48,21 @@ export const cards = [
     },
     proofs: [
       {
-        title: "Canopy Blue: Shark Restoration",
+        id: "canopy-blue-shark-rescue",
+        title: "Canopy Blue: Shark Rescue",
         logoSrc: require("../assets/proof-blue.png"),
         commitment: "5000 Reef Kits",
         detailsUrl: "https://www.google.com.au",
       },
       {
+        id: "colac-gold-shark-reservoir",
         title: "Colac Gold: Shark Reservoir",
         logoSrc: require("../assets/proof-gold.png"),
         commitment: "1000 New Shark Breeds",
         detailsUrl: "https://www.google.com.au",
       },
     ],
-    count: 5,
-    totalCount: 300,
+    cardNumber: 5,
+    totalCollectionCount: 100,
   },
 ];

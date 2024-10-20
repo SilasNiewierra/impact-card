@@ -1,15 +1,22 @@
 import React from "react";
 import { Reward } from "../../../utils/types";
+import { shadeColor } from "../../../utils/colorHelper";
 
 interface RewardsProps {
   rewards: Reward[];
+  color: string;
 }
 
-const Rewards: React.FC<RewardsProps> = ({ rewards }) => {
+const Rewards: React.FC<RewardsProps> = ({ rewards, color }) => {
   return (
     <div className="flex flex-col gap-3 pt-2">
       {rewards.map((reward) => (
-        <a href={reward.detailsUrl} target="_blank" rel="noreferrer">
+        <a
+          href={reward.detailsUrl}
+          target="_blank"
+          rel="noreferrer"
+          key={reward.id}
+        >
           <div className="flex rounded-xl bg-gray-100 bg-opacity-10 overflow-hidden hover:bg-opacity-20">
             <div
               className="bg-white bg-opacity-10 flex justify-center items-center"

@@ -1,4 +1,5 @@
 export interface Reward {
+  id: string;
   iconSrc: string;
   title: string;
   description: string;
@@ -26,38 +27,30 @@ export interface AudienceOwner {
 }
 
 export interface Proof {
+  id: string;
   logoSrc: string;
   title: string;
   commitment: string;
   detailsUrl: string;
 }
 
-export interface Card {
-  title: string;
-  backgroundImageSrc: string;
-  color?: string;
-  rewards: Reward[];
-  impact: Impact;
-  totalImpact: Impact;
-  linkToProjectDetails: string;
-  count: number;
-  totalCount: number;
-  sponsor: Sponsor;
-  audienceOwner: AudienceOwner;
-  proofs: Proof[];
-  flip?: () => void;
-}
 export interface CardProps {
+  id: string;
   title: string;
   backgroundImageSrc: string;
-  color?: string;
+  color: string;
   rewards: Reward[];
   impact: Impact;
   totalImpact: Impact;
-  count: number;
-  totalCount: number;
+  cardNumber: number;
+  totalCollectionCount: number;
   sponsor: Sponsor;
   audienceOwner: AudienceOwner;
   proofs: Proof[];
-  flip?: () => void;
+}
+
+export interface Rarity {
+  value: string;
+  label: string;
+  cssClassName: string;
 }

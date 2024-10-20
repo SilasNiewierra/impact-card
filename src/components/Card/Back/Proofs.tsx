@@ -10,7 +10,12 @@ const Proofs: React.FC<ProofProps> = ({ proofs }) => {
     <div className="flex flex-col gap-3 pt-2">
       <span className="font-bold text-lg">Proof of Authenticity</span>
       {proofs.map((proof) => (
-        <a href={proof.detailsUrl} target="_blank" rel="noreferrer">
+        <a
+          href={proof.detailsUrl}
+          target="_blank"
+          rel="noreferrer"
+          key={proof.id}
+        >
           <div className="flex rounded-xl bg-gray-100 bg-opacity-10 overflow-hidden hover:bg-opacity-20">
             <div
               className="bg-white bg-opacity-10 flex justify-center items-center"

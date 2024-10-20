@@ -1,28 +1,29 @@
 import React from "react";
 import { CardProps, Reward } from "../../../utils/types";
-import Card from "../Card";
+import { shadeColor } from "../../../utils/colorHelper";
+import getRarity from "../../rarityHelper";
+import BadgeEpic from "../../Badge/BadgeEpic";
+import BadgeMint from "../../Badge/BadgeMint";
+import BadgeRare from "../../Badge/BadgeRare";
 
 const FrontCard: React.FC<CardProps> = (props) => {
+  const rarity = getRarity(props.totalCollectionCount);
   return (
-    <Card>
+    <>
       {/* Header Section */}
       <div className="relative">
         {/* Background Image */}
         <img
           src={props.backgroundImageSrc}
           alt="Background"
-          className="object-cover"
-          style={{
-            height: "380px",
-            width: "380px",
-          }}
+          className="object-cover w-full h-[320px]"
         />
 
         {/*  Overlay Cutout Mask */}
-        <div className="absolute inset-0 test-2 h-full w-full">
+        <div className="absolute inset-0 h-full w-full">
           <svg
             role="none"
-            viewBox="0 0 300 310"
+            viewBox="0 0 300 305"
             preserveAspectRatio="none"
             style={{
               width: "100%",
@@ -56,33 +57,33 @@ const FrontCard: React.FC<CardProps> = (props) => {
             />
 
             <defs>
-              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <linearGradient id="grad1" x1="50%" y1="100%" x2="50%" y2="0%">
                 <stop
                   offset="0%"
-                  style={{ stopColor: "rgb(0,0,0)", stopOpacity: 1 }}
+                  style={{ stopColor: props.color, stopOpacity: 1 }}
                 />
                 <stop
                   offset="100%"
-                  style={{ stopColor: "rgb(0,0,0)", stopOpacity: 0.5 }}
+                  style={{ stopColor: props.color, stopOpacity: 0.3 }}
                 />
               </linearGradient>
             </defs>
           </svg>
         </div>
 
-        {/* Gradient Overlay */}
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-gray-900 to-transparent opacity-100 h-20"></div>
-
         {/* Company Logo */}
         <div
-          className="absolute top-9 left-5 bg-gray-900 rounded-full flex items-center justify-center"
-          style={{ height: "150px", width: "150px" }}
+          className="absolute top-5 left-5 rounded-full flex items-center justify-center"
+          style={{
+            height: "150px",
+            width: "150px",
+            backgroundColor: props.color,
+          }}
         >
           <img
             src={props.sponsor.logoSrc}
             alt="Company Logo"
             style={{ height: "120px", width: "120px" }}
-            className="shimmer-rainbow"
           />
         </div>
       </div>
@@ -90,10 +91,30 @@ const FrontCard: React.FC<CardProps> = (props) => {
       {/* Content Section */}
       <div className="p-2 overflow-y-scroll">
         {/* Project Name */}
-        <h3 className="text-xl font-bold mb-2">{props.title}</h3>
+
+        <div className="flex justify-between">
+          <h3 className="text-xl font-bold mb-2">{props.title}</h3>
+          {rarity.value !== "common" && (
+            <div className="relative -mt-2 ">
+              <div className="w-10 h-10">
+                <span className="absolute top-3 left-1.5 font-bold text-white text-xs">
+                  {rarity.label}
+                </span>
+                {rarity.value === "rare" && <BadgeRare />}
+                {rarity.value === "mint" && <BadgeMint />}
+                {rarity.value === "epic" && <BadgeEpic />}
+              </div>
+            </div>
+          )}
+        </div>
 
         {/* Impact Data Section */}
-        <div className="flex justify-around py-2 border-t border-b border-gray-400 text-center">
+        <div
+          className="flex justify-around py-2 border-t border-b text-center"
+          style={{
+            borderColor: shadeColor(props.color, 60),
+          }}
+        >
           {/* Achievement Statistic */}
           <div className="flex flex-col items-center flex-1">
             <div className="flex gap-2">
@@ -125,7 +146,12 @@ const FrontCard: React.FC<CardProps> = (props) => {
           {/* Audience Owner */}
           <div className="flex flex-col items-center flex-1">
             <div className="flex gap-2">
-              <div className="flex rounded-full bg-gray-400">
+              <div
+                className="flex rounded-full"
+                style={{
+                  backgroundColor: shadeColor(props.color, -30),
+                }}
+              >
                 <img
                   src={props.audienceOwner.logoSrc}
                   alt="Company Logo"
@@ -150,14 +176,28 @@ const FrontCard: React.FC<CardProps> = (props) => {
         </div>
       </div>
       {/* Bottom Section */}
-      <div className="bg-gray-900 px-2 py-2 flex items-center justify-between border-t border-gray-800">
-        <span>
-          <span className="font-bold">{props.count}</span>/{props.totalCount}
-        </span>
+      <div
+        className="px-2 py-2 flex items-center justify-between"
+        style={{
+          backgroundColor: shadeColor(props.color, -10),
+        }}
+      >
+        <div className="flex items-center justify-center">
+          <span>
+            <span className="font-bold">{props.cardNumber}</span>/
+            {props.totalCollectionCount}
+          </span>
+        </div>
         <div className="flex justify-center gap-2 items-center">
           <span className="font-bold">Rewards</span>
           {props.rewards.map((reward: Reward) => (
-            <div className="flex items-center space-x-2 bg-gray-800 rounded-full p-2">
+            <div
+              className="flex items-center space-x-2 rounded-full p-2"
+              style={{
+                backgroundColor: shadeColor(props.color, -20),
+              }}
+              key={reward.id}
+            >
               <img
                 src={reward.iconSrc}
                 alt="Reward Icon 1"
@@ -167,7 +207,7 @@ const FrontCard: React.FC<CardProps> = (props) => {
           ))}
         </div>
       </div>
-    </Card>
+    </>
   );
 };
 
