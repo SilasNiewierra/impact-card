@@ -1,6 +1,6 @@
 import React from "react";
 import { shadeColor } from "../../utils/colorHelper";
-import getRarity from "../rarityHelper";
+import getRarity from "../../utils/rarityHelper";
 
 interface CardBorderProps {
   totalCollectionCount: number;

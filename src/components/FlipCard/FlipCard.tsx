@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./FlipCard.css";
-import CardLayout from "../Card/CardLayout";
+import Card from "../Card/Card";
 import FrontCard from "../Card/Front/Front";
 import BackCard from "../Card/Back/Back";
 import { CardProps } from "../../utils/types";
@@ -19,14 +19,14 @@ const Flip: React.FC<CardProps> = (props) => {
     >
       <div className="flip-card-inner">
         <div className="flip-card-front cursor-pointer" onClick={handleFlip}>
-          <CardLayout cardProps={props}>
+          <Card cardProps={props}>
             <FrontCard {...props} />
-          </CardLayout>
+          </Card>
         </div>
         <div className="flip-card-back" onClick={handleFlip}>
-          <CardLayout cardProps={props}>
+          <Card cardProps={props}>
             <BackCard cardProps={props} flip={handleFlip} />
-          </CardLayout>
+          </Card>
         </div>
       </div>
     </div>

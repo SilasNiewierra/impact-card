@@ -1,4 +1,4 @@
-import { Rarity } from "../utils/types";
+import { Rarity } from "./types";
 
 const getRarity = (totalCollectionCount: number): Rarity => {
 

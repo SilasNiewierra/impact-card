@@ -7,7 +7,7 @@ interface CardLayoutProps {
   cardProps: CardProps;
 }
 
-const CardLayout: React.FC<CardLayoutProps> = ({ children, cardProps }) => {
+const Card: React.FC<CardLayoutProps> = ({ children, cardProps }) => {
   return (
     <div className="flex justify-center items-center relative group h-full w-full">
       <CardBorder
@@ -31,4 +31,4 @@ const CardLayout: React.FC<CardLayoutProps> = ({ children, cardProps }) => {
   );
 };
 
-export default CardLayout;
+export default Card;

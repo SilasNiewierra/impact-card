@@ -1,7 +1,7 @@
 import React from "react";
 import { CardProps, Reward } from "../../../utils/types";
 import { shadeColor } from "../../../utils/colorHelper";
-import getRarity from "../../rarityHelper";
+import getRarity from "../../../utils/rarityHelper";
 import BadgeEpic from "../../Badge/BadgeEpic";
 import BadgeMint from "../../Badge/BadgeMint";
 import BadgeRare from "../../Badge/BadgeRare";
