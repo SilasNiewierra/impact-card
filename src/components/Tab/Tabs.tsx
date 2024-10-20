@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 interface TabItem {
   label: string;
@@ -13,13 +13,10 @@ interface Props {
 const Tabs: React.FC<Props> = ({ tabs, updateTab }) => {
   const [activeTab, setActiveTab] = useState<number>(0);
 
-  useEffect(() => {
-    updateTab(tabs[activeTab]);
-  }, [activeTab]);
-
   const handleTabChange = (event: any, tabIndex: number) => {
     event.stopPropagation();
     setActiveTab(tabIndex);
+    updateTab(tabs[tabIndex]);
   };
 
   return (
