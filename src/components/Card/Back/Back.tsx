@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from "react";
-import ShareIcon from "../../../assets/icon-share.png";
 import Tabs from "../../Tab/Tabs";
 import { CardProps } from "../../../utils/types";
 import Rewards from "./Rewards";
@@ -18,10 +17,6 @@ interface BackCardProps {
   flip: () => void;
 }
 const BackCard: React.FC<BackCardProps> = ({ cardProps, flip }) => {
-  const handleShare = () => {
-    // create share logic with meta tags
-  };
-
   const tabs = [
     {
       label: "Rewards",
@@ -40,6 +35,11 @@ const BackCard: React.FC<BackCardProps> = ({ cardProps, flip }) => {
     if (!currentTab) return false;
     return ["Project", "Sponsor"].includes(currentTab.label);
   }, [currentTab]);
+
+  const handleRoutingClick = (event: any, url: string) => {
+    event.stopPropagation();
+    window.open(url, "_blank");
+  };
 
   return (
     <>
@@ -93,29 +93,26 @@ const BackCard: React.FC<BackCardProps> = ({ cardProps, flip }) => {
               target="_blank"
               rel="noreferrer"
             >
-              <button className="rounded-3xl bg-white bg-opacity-30 px-3 py-1 font-bold text-sm hover:bg-opacity-40">
+              <button
+                className="rounded-3xl bg-white bg-opacity-30 px-3 py-1 font-bold text-sm hover:bg-opacity-40"
+                onClick={(e) =>
+                  handleRoutingClick(e, cardProps.audienceOwner.detailsUrl)
+                }
+              >
                 Project Details
               </button>
             </a>
           )}
           {currentTab?.label === "Sponsor" && (
-            <a
-              href={cardProps.sponsor.detailsUrl}
-              target="_blank"
-              rel="noreferrer"
+            <button
+              className="rounded-3xl bg-white bg-opacity-30 px-3 py-1 font-bold text-sm  hover:bg-opacity-40"
+              onClick={(e) =>
+                handleRoutingClick(e, cardProps.sponsor.detailsUrl)
+              }
             >
-              <button className="rounded-3xl bg-white bg-opacity-30 px-3 py-1 font-bold text-sm  hover:bg-opacity-40">
-                Sponsor Details
-              </button>
-            </a>
+              Sponsor Details
+            </button>
           )}
-          {/* Share Button */}
-          {/* <img
-          src={ShareIcon}
-          alt="Share Icon"
-          className="w-6 h-6"
-          onClick={handleShare}
-        /> */}
         </div>
       )}
     </>

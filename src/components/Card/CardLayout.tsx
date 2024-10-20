@@ -9,10 +9,7 @@ interface CardLayoutProps {
 
 const CardLayout: React.FC<CardLayoutProps> = ({ children, cardProps }) => {
   return (
-    <div
-      className="flex justify-center items-center relative group"
-      style={{ height: "590px", width: "350px" }}
-    >
+    <div className="flex justify-center items-center relative group h-full w-full">
       <CardBorder
         totalCollectionCount={cardProps.totalCollectionCount}
         color={cardProps.color}
@@ -25,7 +22,7 @@ const CardLayout: React.FC<CardLayoutProps> = ({ children, cardProps }) => {
             backgroundColor: cardProps.color,
           }}
         >
-          <div className="overflow-hidden h-full flex flex-col justify-between rounded-xl">
+          <div className="overflow-hidden h-full flex flex-col justify-between rounded-2xl">
             {children}
           </div>
         </div>

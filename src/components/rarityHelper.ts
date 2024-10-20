@@ -27,7 +27,7 @@ const getRarity = (totalCollectionCount: number): Rarity => {
     epic: {
       value: "epic",
       label: "Epic",
-      cssClassName: "from-pink-500 via-cyan-500 to-violet-500 animate-pulse",
+      cssClassName: "from-pink-500 via-cyan-500 to-violet-500",
     },
   };
 

@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <div className="with-blur-backdrop overflow-scroll">
-        <div className="flex justify-center items-center pt-20">
+        <div className="flex justify-center items-center h-full flex-wrap gap-4 py-10 overflow-scroll">
           {cards.map((card) => (
             <FlipCard {...card} key={`${card.id}-${card.cardNumber}`} />
           ))}

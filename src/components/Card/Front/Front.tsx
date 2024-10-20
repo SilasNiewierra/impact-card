@@ -5,9 +5,18 @@ import getRarity from "../../rarityHelper";
 import BadgeEpic from "../../Badge/BadgeEpic";
 import BadgeMint from "../../Badge/BadgeMint";
 import BadgeRare from "../../Badge/BadgeRare";
+import ShareIcon from "../../../assets/icon-share.png";
 
 const FrontCard: React.FC<CardProps> = (props) => {
   const rarity = getRarity(props.totalCollectionCount);
+
+  const handleShare = (event: any) => {
+    event.stopPropagation();
+    // create share logic with meta tags
+    // for demo purposes just open my portfolio :D
+    window.open("https://silas-niewierra.web.app/", "_blank");
+  };
+
   return (
     <>
       {/* Header Section */}
@@ -177,24 +186,32 @@ const FrontCard: React.FC<CardProps> = (props) => {
       </div>
       {/* Bottom Section */}
       <div
-        className="px-2 py-2 flex items-center justify-between"
+        className="p-2 flex items-center justify-between"
         style={{
-          backgroundColor: shadeColor(props.color, -10),
+          backgroundColor: shadeColor(props.color, -30),
         }}
       >
-        <div className="flex items-center justify-center">
+        <div className="flex items-center flex-1">
           <span>
-            <span className="font-bold">{props.cardNumber}</span>/
+            <span className="font-bold">{props.cardNumber}</span> /{" "}
             {props.totalCollectionCount}
           </span>
         </div>
-        <div className="flex justify-center gap-2 items-center">
-          <span className="font-bold">Rewards</span>
+
+        <div
+          className="flex items-center justify-center flex-1"
+          onClick={handleShare}
+        >
+          <img src={ShareIcon} alt="Share Icon" className="w-6 h-6" />
+        </div>
+
+        <div className="flex justify-end gap-2 items-center flex-1">
+          {/* <span className="font-bold">Rewards</span> */}
           {props.rewards.map((reward: Reward) => (
             <div
               className="flex items-center space-x-2 rounded-full p-2"
               style={{
-                backgroundColor: shadeColor(props.color, -20),
+                backgroundColor: shadeColor(props.color, -70),
               }}
               key={reward.id}
             >

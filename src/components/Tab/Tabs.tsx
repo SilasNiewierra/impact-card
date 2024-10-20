@@ -17,6 +17,11 @@ const Tabs: React.FC<Props> = ({ tabs, updateTab }) => {
     updateTab(tabs[activeTab]);
   }, [activeTab]);
 
+  const handleTabChange = (event: any, tabIndex: number) => {
+    event.stopPropagation();
+    setActiveTab(tabIndex);
+  };
+
   return (
     <div className="w-full max-w-lg mx-auto">
       <div className="flex border-b border-gray-300 overflow-x-scroll">
@@ -28,7 +33,7 @@ const Tabs: React.FC<Props> = ({ tabs, updateTab }) => {
                 ? "border-b-2 border-white text-white"
                 : "text-gray-600"
             }`}
-            onClick={() => setActiveTab(idx)}
+            onClick={(e) => handleTabChange(e, idx)}
           >
             {tab.label}
           </button>
