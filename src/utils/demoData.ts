@@ -1,7 +1,7 @@
 export const cards = [
   {
     id: "whale-shark-rescue",
-    title: "Whale Shark Rescue",
+    title: "Gentle Giants of the Deep",
     backgroundImageSrc: require("../assets/moana-bg.jpg"),
     color: "#111827",
     rewards: [
@@ -25,7 +25,7 @@ export const cards = [
     impact: {
       iconSrc: require("../assets/icon-tree.png"),
       metric: "5",
-      text: "Reef kits planted",
+      text: "Habitats protected",
     },
     totalImpact: {
       iconSrc: require("../assets/icon-globe.png"),
@@ -67,7 +67,7 @@ export const cards = [
   },
   {
     id: "sea-turtle-conservation",
-    title: "Sea Turtle Conservation",
+    title: "Ancient Navigators",
     backgroundImageSrc: require("../assets/turtle-conservation-bg.jpg"),
     color: "#111827",
     rewards: [
@@ -134,7 +134,7 @@ export const cards = [
   },
   {
     id: "plastic-pollution-reduction",
-    title: "Plastic Pollution Reduction",
+    title: "Te Fiti's Tears",
     backgroundImageSrc: require("../assets/plastic-pollution-bg.jpg"),
     color: "#111827",
     rewards: [
@@ -201,7 +201,7 @@ export const cards = [
   },
   {
     id: "coral-reef-restoration",
-    title: "Coral Reef Restoration",
+    title: "Oceans Heart",
     backgroundImageSrc: require("../assets/coral-reef-bg.jpg"),
     color: "#111827",
     rewards: [
