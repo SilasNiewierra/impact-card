@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import FlipCard from "./components/FlipCard/FlipCard";
 import cards from "./utils/demoData";
+import CardContainer from "./components/RevealCard/RevealCard";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <div className="with-blur-backdrop overflow-scroll">
         <div className="flex justify-center items-center h-full flex-wrap gap-4 py-10 overflow-scroll">
           {cards.map((card) => (
-            <FlipCard {...card} key={`${card.id}-${card.cardNumber}`} />
+            <CardContainer {...card} key={`${card.id}-${card.cardNumber}`} />
           ))}
         </div>
       </div>

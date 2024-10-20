@@ -5,7 +5,11 @@ import FrontCard from "../Card/Front/Front";
 import BackCard from "../Card/Back/Back";
 import { CardProps } from "../../utils/types";
 
-const Flip: React.FC<CardProps> = (props) => {
+interface Props {
+  cardProps: CardProps;
+}
+
+const Flip: React.FC<Props> = ({ cardProps }) => {
   const [isFlipped, setFlipped] = useState(false);
 
   const handleFlip = () => {
@@ -16,13 +20,13 @@ const Flip: React.FC<CardProps> = (props) => {
     <div className={`flip-card ${isFlipped ? "flipped" : ""}`}>
       <div className="flip-card-inner cursor-pointer">
         <div className="flip-card-front" onClick={handleFlip}>
-          <Card cardProps={props}>
-            <FrontCard cardProps={props} />
+          <Card cardProps={cardProps}>
+            <FrontCard cardProps={cardProps} />
           </Card>
         </div>
         <div className="flip-card-back" onClick={handleFlip}>
-          <Card cardProps={props}>
-            <BackCard cardProps={props} />
+          <Card cardProps={cardProps}>
+            <BackCard cardProps={cardProps} />
           </Card>
         </div>
       </div>

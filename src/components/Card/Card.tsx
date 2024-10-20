@@ -5,13 +5,16 @@ import CardBorder from "./CardBorder";
 interface Props {
   children: React.ReactElement | React.ReactElement[];
   cardProps: CardProps;
+  hidden?: boolean;
 }
 
-const Card: React.FC<Props> = ({ children, cardProps }) => {
+const Card: React.FC<Props> = ({ children, cardProps, hidden }) => {
   return (
     <div className="flex justify-center items-center relative group h-full w-full">
       <CardBorder
-        totalCollectionCount={cardProps.totalCollectionCount}
+        totalCollectionCount={
+          hidden ? Infinity : cardProps.totalCollectionCount
+        }
         color={cardProps.color}
       />
 

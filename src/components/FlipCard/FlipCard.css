@@ -4,7 +4,6 @@
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.5s;
-    margin: 0 auto;
     display: flex;
     align-items: center;
 }
