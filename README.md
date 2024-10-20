@@ -1,6 +1,6 @@
 # Everclime - Impact Card
 
-![alt text](./src/assets/readme/macbook-front.png)
+![alt text](./src/assets/readme/mockup-macbook-reveal.png)
 
 **Description:**
 
@@ -39,7 +39,7 @@ The Moana Collection is a curated set of impact cards inspired by the Disney mov
 
 Live demo: https://impact-card.vercel.app/
 
-![alt text](./src/assets/readme/macbook-back.png)
+![alt text](./src/assets/readme/mockup-macbook-back.png)
 
 **Idea Behind the Collection:**
 
