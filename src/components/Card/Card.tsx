@@ -18,7 +18,7 @@ const Card: React.FC<Props> = ({ children, cardProps, hidden }) => {
         color={cardProps.color}
       />
 
-      <div className="relative w-[97%] h-[98%] rounded-lg z-20">
+      <div className="relative w-[97%] h-[98%] rounded-lg">
         <div
           className="w-full h-full p-1 text-white rounded-2xl overflow-hidden mx-auto"
           style={{
