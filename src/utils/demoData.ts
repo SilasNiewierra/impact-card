@@ -201,7 +201,7 @@ export const cards = [
   },
   {
     id: "coral-reef-restoration",
-    title: "Oceans Heart",
+    title: "The Ocean's Heart",
     backgroundImageSrc: require("../assets/coral-reef-bg.jpg"),
     color: "#111827",
     rewards: [

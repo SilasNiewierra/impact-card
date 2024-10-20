@@ -47,7 +47,7 @@ Live demo: https://impact-card.vercel.app/
 * **Promote Environmental Awareness:** The collection can be used to educate users about the importance of ocean conservation, sustainable practices, and cultural preservation, all of which are themes explored in the film.
 * **Create a Coherent Narrative:** Each impact card within the collection can be designed to represent a specific aspect of Moana's journey or the Polynesian culture, providing a cohesive and immersive experience.
 
-**<span style="background: linear-gradient(90deg, rgba(255,0,150,1) 0%, rgba(0,204,255,1) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Example Impact Cards</span>**
+**<Example Impact Cards>**
 
 * **"Gentle Giants of the Deep":** This card could highlight the importance of sustainable seafood choices to protect whale sharks, the biggest fish in the ocean.
 * **"Ancient Navigators":** This card could focus on reducing plastic pollution and prevent oversfishing to keep sea turtles, ancient navigators of the sea, safe.
