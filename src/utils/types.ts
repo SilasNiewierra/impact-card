@@ -53,6 +53,7 @@ export interface Rarity {
   value: string;
   label: string;
   cssClassName: string;
+  colors: string[];
 }
 
 export interface TabItem {
