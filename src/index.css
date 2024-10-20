@@ -12,28 +12,3 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.card {
-  @apply p-6 bg-green-500 rounded-lg shadow-lg overflow-hidden;
-}
-
-@media (min-width: 1024px) {
-  .card2 {
-      max-height: 546px;
-      position: sticky;
-  }
-}
-
-.card2{
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  border-radius: 21.2px;
-  overflow: hidden;
-  @apply bg-red-500
-}

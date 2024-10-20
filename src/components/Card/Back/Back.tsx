@@ -1,22 +1,18 @@
 import React, { useMemo, useState } from "react";
 import Tabs from "../../Tab/Tabs";
-import { CardProps } from "../../../utils/types";
+import { CardProps, TabItem } from "../../../utils/types";
 import Rewards from "./Rewards";
 import Proofs from "./Proofs";
 import Project from "./Project";
 import Sponsor from "./Sponsor";
 import { shadeColor } from "../../../utils/colorHelper";
+import DetailButton from "./DetailButton";
 
-interface TabItem {
-  label: string;
-  content: React.ReactNode;
-}
-
-interface BackCardProps {
+interface Props {
   cardProps: CardProps;
-  flip: () => void;
 }
-const BackCard: React.FC<BackCardProps> = ({ cardProps, flip }) => {
+
+const BackCard: React.FC<Props> = ({ cardProps }) => {
   const tabs = [
     {
       label: "Rewards",
@@ -36,16 +32,12 @@ const BackCard: React.FC<BackCardProps> = ({ cardProps, flip }) => {
     return ["Project", "Sponsor"].includes(currentTab.label);
   }, [currentTab]);
 
-  const handleRoutingClick = (event: any, url: string) => {
-    event.stopPropagation();
-    window.open(url, "_blank");
-  };
-
   return (
     <>
+      {/* Top Section */}
       <div>
         {/* Header Section */}
-        <div className="relative cursor-pointer" onClick={flip}>
+        <div className="relative cursor-pointer">
           <img
             src={cardProps.backgroundImageSrc}
             alt="Background"
@@ -74,7 +66,7 @@ const BackCard: React.FC<BackCardProps> = ({ cardProps, flip }) => {
             />
           </div>
         </div>
-        {/* BackCard Content Section */}
+        {/* Content Section */}
         <div className="p-2">
           <Tabs tabs={tabs} updateTab={setCurrentTab} />
         </div>
@@ -88,30 +80,16 @@ const BackCard: React.FC<BackCardProps> = ({ cardProps, flip }) => {
           }}
         >
           {currentTab?.label === "Project" && (
-            <a
-              href={cardProps.audienceOwner.detailsUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <button
-                className="rounded-3xl bg-white bg-opacity-30 px-3 py-1 font-bold text-sm hover:bg-opacity-40"
-                onClick={(e) =>
-                  handleRoutingClick(e, cardProps.audienceOwner.detailsUrl)
-                }
-              >
-                Project Details
-              </button>
-            </a>
+            <DetailButton
+              buttonText="Project Details"
+              detailsUrl={cardProps.audienceOwner.detailsUrl}
+            />
           )}
           {currentTab?.label === "Sponsor" && (
-            <button
-              className="rounded-3xl bg-white bg-opacity-30 px-3 py-1 font-bold text-sm  hover:bg-opacity-40"
-              onClick={(e) =>
-                handleRoutingClick(e, cardProps.sponsor.detailsUrl)
-              }
-            >
-              Sponsor Details
-            </button>
+            <DetailButton
+              buttonText="Sponsor Details"
+              detailsUrl={cardProps.sponsor.detailsUrl}
+            />
           )}
         </div>
       )}

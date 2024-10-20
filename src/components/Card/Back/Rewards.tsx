@@ -1,12 +1,12 @@
 import React from "react";
 import { Reward } from "../../../utils/types";
 
-interface RewardsProps {
+interface Props {
   rewards: Reward[];
   color: string;
 }
 
-const Rewards: React.FC<RewardsProps> = ({ rewards, color }) => {
+const Rewards: React.FC<Props> = ({ rewards, color }) => {
   const handleClick = (event: any, url: string) => {
     event.stopPropagation();
     window.open(url, "_blank");

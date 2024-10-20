@@ -2,12 +2,12 @@ import React from "react";
 import { CardProps } from "../../utils/types";
 import CardBorder from "./CardBorder";
 
-interface CardLayoutProps {
+interface Props {
   children: React.ReactElement | React.ReactElement[];
   cardProps: CardProps;
 }
 
-const Card: React.FC<CardLayoutProps> = ({ children, cardProps }) => {
+const Card: React.FC<Props> = ({ children, cardProps }) => {
   return (
     <div className="flex justify-center items-center relative group h-full w-full">
       <CardBorder

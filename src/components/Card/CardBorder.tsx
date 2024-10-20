@@ -2,15 +2,12 @@ import React from "react";
 import { shadeColor } from "../../utils/colorHelper";
 import getRarity from "../../utils/rarityHelper";
 
-interface CardBorderProps {
+interface Props {
   totalCollectionCount: number;
   color: string;
 }
 
-const CardBorder: React.FC<CardBorderProps> = ({
-  totalCollectionCount,
-  color,
-}) => {
+const CardBorder: React.FC<Props> = ({ totalCollectionCount, color }) => {
   const rarity = getRarity(totalCollectionCount);
   return (
     <>

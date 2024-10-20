@@ -1,11 +1,11 @@
 import React from "react";
 import { AudienceOwner } from "../../../utils/types";
 
-interface ProjectProps {
+interface Props {
   audienceOwner: AudienceOwner;
 }
 
-const Project: React.FC<ProjectProps> = ({ audienceOwner }) => {
+const Project: React.FC<Props> = ({ audienceOwner }) => {
   return (
     <div className="flex flex-col gap-3 pt-2">
       <div className="font-bold text-lg">{audienceOwner.name}</div>

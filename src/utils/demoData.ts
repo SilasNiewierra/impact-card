@@ -1,4 +1,4 @@
-export const cards = [
+const cards = [
   {
     id: "whale-shark-rescue",
     title: "Gentle Giants of the Deep",
@@ -41,7 +41,7 @@ export const cards = [
     },
     audienceOwner: {
       name: "Shark Whale Collaborative",
-      logoSrc: require("../assets/shark-conservation-group-logo.png"),
+      logoSrc: "https://isteam.wsimg.com/ip/029b1b0a-04c1-41ac-8261-937f309eed6d/Bold%20Logo%20Black%20no%20writing.png/:/rs=w:400,cg:true,m",
       detailsUrl: "https://silas-niewierra.web.app/",
       summary:
         "Our organization is dedicated to the conservation of the endangered Shark Whale. Through strategic measures to deter hunting, enhance the Shark Whale's food supply, and create new habitats, we significantly contribute to the survival of this remarkable species. Our efforts play a vital role in ensuring the long-term sustainability and health of Shark Whale populations.",
@@ -267,3 +267,4 @@ export const cards = [
     totalCollectionCount: 100,
   },
 ];
+export default cards 

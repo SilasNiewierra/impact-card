@@ -1,11 +1,11 @@
 import React from "react";
 import { Sponsor } from "../../../utils/types";
 
-interface SponsorProps {
+interface Props {
   sponsor: Sponsor;
 }
 
-const Sposor: React.FC<SponsorProps> = ({ sponsor }) => {
+const Sposor: React.FC<Props> = ({ sponsor }) => {
   return (
     <div className="flex flex-col gap-3 pt-2">
       <div className="font-bold text-lg">{sponsor.name}</div>

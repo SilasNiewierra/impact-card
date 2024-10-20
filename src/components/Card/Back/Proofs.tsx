@@ -1,11 +1,11 @@
 import React from "react";
 import { Proof } from "../../../utils/types";
 
-interface ProofProps {
+interface Props {
   proofs: Proof[];
 }
 
-const Proofs: React.FC<ProofProps> = ({ proofs }) => {
+const Proofs: React.FC<Props> = ({ proofs }) => {
   const handleClick = (event: any, url: string) => {
     event.stopPropagation();
     window.open(url, "_blank");

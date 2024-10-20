@@ -7,8 +7,12 @@ import BadgeMint from "../../Badge/BadgeMint";
 import BadgeRare from "../../Badge/BadgeRare";
 import ShareIcon from "../../../assets/icon-share.png";
 
-const FrontCard: React.FC<CardProps> = (props) => {
-  const rarity = getRarity(props.totalCollectionCount);
+interface Props {
+  cardProps: CardProps;
+}
+
+const FrontCard: React.FC<Props> = ({ cardProps }) => {
+  const rarity = getRarity(cardProps.totalCollectionCount);
 
   const handleShare = (event: any) => {
     event.stopPropagation();
@@ -23,7 +27,7 @@ const FrontCard: React.FC<CardProps> = (props) => {
       <div className="relative">
         {/* Background Image */}
         <img
-          src={props.backgroundImageSrc}
+          src={cardProps.backgroundImageSrc}
           alt="Background"
           className="object-cover w-full h-[320px]"
         />
@@ -69,11 +73,11 @@ const FrontCard: React.FC<CardProps> = (props) => {
               <linearGradient id="grad1" x1="50%" y1="100%" x2="50%" y2="0%">
                 <stop
                   offset="0%"
-                  style={{ stopColor: props.color, stopOpacity: 1 }}
+                  style={{ stopColor: cardProps.color, stopOpacity: 1 }}
                 />
                 <stop
                   offset="100%"
-                  style={{ stopColor: props.color, stopOpacity: 0.3 }}
+                  style={{ stopColor: cardProps.color, stopOpacity: 0.3 }}
                 />
               </linearGradient>
             </defs>
@@ -86,11 +90,11 @@ const FrontCard: React.FC<CardProps> = (props) => {
           style={{
             height: "150px",
             width: "150px",
-            backgroundColor: props.color,
+            backgroundColor: cardProps.color,
           }}
         >
           <img
-            src={props.sponsor.logoSrc}
+            src={cardProps.sponsor.logoSrc}
             alt="Company Logo"
             style={{ height: "120px", width: "120px" }}
           />
@@ -102,7 +106,7 @@ const FrontCard: React.FC<CardProps> = (props) => {
         {/* Project Name */}
 
         <div className="flex justify-between">
-          <h3 className="text-xl font-bold mb-2">{props.title}</h3>
+          <h3 className="text-xl font-bold mb-2">{cardProps.title}</h3>
           {rarity.value !== "common" && (
             <div className="relative -mt-2 ">
               <div className="w-10 h-10">
@@ -121,35 +125,37 @@ const FrontCard: React.FC<CardProps> = (props) => {
         <div
           className="flex justify-around py-2 border-t border-b text-center"
           style={{
-            borderColor: shadeColor(props.color, 60),
+            borderColor: shadeColor(cardProps.color, 60),
           }}
         >
           {/* Achievement Statistic */}
           <div className="flex flex-col items-center flex-1">
             <div className="flex gap-2">
               <img
-                src={props.impact.iconSrc}
+                src={cardProps.impact.iconSrc}
                 alt="Achievement Statistics Icon"
                 className="w-6 h-6 opacity-50"
               />
-              <span className="text-base font-bold">{props.impact.metric}</span>
+              <span className="text-base font-bold">
+                {cardProps.impact.metric}
+              </span>
             </div>
-            <span className="text-xs mt-1">{props.impact.text}</span>
+            <span className="text-xs mt-1">{cardProps.impact.text}</span>
           </div>
 
           {/* Personal Impact */}
           <div className="flex flex-col items-center flex-1">
             <div className="flex gap-2">
               <img
-                src={props.totalImpact.iconSrc}
+                src={cardProps.totalImpact.iconSrc}
                 alt="Personal Impact Icon"
                 className="w-6 h-6 opacity-50"
               />
               <span className="text-base font-bold">
-                {props.totalImpact.metric}
+                {cardProps.totalImpact.metric}
               </span>
             </div>
-            <span className="text-xs mt-1">{props.totalImpact.text}</span>
+            <span className="text-xs mt-1">{cardProps.totalImpact.text}</span>
           </div>
 
           {/* Audience Owner */}
@@ -158,24 +164,24 @@ const FrontCard: React.FC<CardProps> = (props) => {
               <div
                 className="flex rounded-full"
                 style={{
-                  backgroundColor: shadeColor(props.color, -30),
+                  backgroundColor: shadeColor(cardProps.color, -30),
                 }}
               >
                 <img
-                  src={props.audienceOwner.logoSrc}
+                  src={cardProps.audienceOwner.logoSrc}
                   alt="Company Logo"
                   className="w-6 h-6"
                 />
               </div>
             </div>
-            <span className="text-xs mt-1">{props.audienceOwner.name}</span>
+            <span className="text-xs mt-1">{cardProps.audienceOwner.name}</span>
           </div>
         </div>
 
         {/* Sponsor */}
         <div className="mt-4 text-center flex justify-center items-center">
           <img
-            src={props.sponsor.logoSrc}
+            src={cardProps.sponsor.logoSrc}
             alt="Barbie Icon"
             className="w-6 h-6 mr-2"
           />
@@ -188,13 +194,13 @@ const FrontCard: React.FC<CardProps> = (props) => {
       <div
         className="p-2 flex items-center justify-between"
         style={{
-          backgroundColor: shadeColor(props.color, -30),
+          backgroundColor: shadeColor(cardProps.color, -30),
         }}
       >
         <div className="flex items-center flex-1">
           <span>
-            <span className="font-bold">{props.cardNumber}</span> /{" "}
-            {props.totalCollectionCount}
+            <span className="font-bold">{cardProps.cardNumber}</span> /{" "}
+            {cardProps.totalCollectionCount}
           </span>
         </div>
 
@@ -207,11 +213,11 @@ const FrontCard: React.FC<CardProps> = (props) => {
 
         <div className="flex justify-end gap-2 items-center flex-1">
           {/* <span className="font-bold">Rewards</span> */}
-          {props.rewards.map((reward: Reward) => (
+          {cardProps.rewards.map((reward: Reward) => (
             <div
               className="flex items-center space-x-2 rounded-full p-2"
               style={{
-                backgroundColor: shadeColor(props.color, -70),
+                backgroundColor: shadeColor(cardProps.color, -70),
               }}
               key={reward.id}
             >

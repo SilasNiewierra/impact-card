@@ -54,3 +54,8 @@ export interface Rarity {
   label: string;
   cssClassName: string;
 }
+
+export interface TabItem {
+  label: string;
+  content: React.ReactNode;
+}

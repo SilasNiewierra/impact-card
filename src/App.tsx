@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import FlipCard from "./components/FlipCard/FlipCard";
-import { cards } from "./utils/demoData";
+import cards from "./utils/demoData";
 
 function App() {
   return (

@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-
-interface TabItem {
-  label: string;
-  content: React.ReactNode;
-}
+import { TabItem } from "../../utils/types";
 
 interface Props {
   tabs: TabItem[];

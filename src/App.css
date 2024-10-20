@@ -1,25 +1,32 @@
 html,
 body,
 #root {
-    @apply h-full w-full m-0 p-0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0
 }
 
 .App {
-    background: url("./assets/moana-background.jpg") no-repeat center center fixed;
+    background: url("./assets/moana-collection-bg.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    @apply w-full h-full m-0 p-0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0
 }
 
 .with-blur-backdrop {
     background-color: rgba(0, 0, 0, 0.6);
     -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
-    @apply w-full h-full;
+    height: 100%;
+    width: 100%;
 }
 
 .shimmer {

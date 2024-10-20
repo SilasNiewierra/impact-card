@@ -17,15 +17,15 @@ const Flip: React.FC<CardProps> = (props) => {
       className={`flip-card ${isFlipped ? "flipped" : ""}`}
       style={{ height: "590px", width: "350px" }}
     >
-      <div className="flip-card-inner">
-        <div className="flip-card-front cursor-pointer" onClick={handleFlip}>
+      <div className="flip-card-inner cursor-pointer">
+        <div className="flip-card-front" onClick={handleFlip}>
           <Card cardProps={props}>
-            <FrontCard {...props} />
+            <FrontCard cardProps={props} />
           </Card>
         </div>
         <div className="flip-card-back" onClick={handleFlip}>
           <Card cardProps={props}>
-            <BackCard cardProps={props} flip={handleFlip} />
+            <BackCard cardProps={props} />
           </Card>
         </div>
       </div>
